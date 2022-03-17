@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 보통 스타일은 새로운 스타일로 저장한 후 새롭게 설정할 수 있음 파일구분 가능 -->
+    <style>
+      /*css 주석처리는 조금 다름 주의하기*/
+      * {
+        font-family: "Jua", sans-serif;
+      }
+      .mytitle {
+        background-color: green;
+        width: 300px;
+        height: 200px;
+        color: white;
+        text-align: center;
+
+        background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+        background-size: cover;
+        background-position: center;
+
+        border-radius: 10px;
+        padding-top: 20px;
+      }
+
+      .mybtn {
+        display: block;
+        margin: auto;
+      }
+
+      .wrap {
+        width: 300px;
+        margin: auto;
+      }
+      .red-font {
+        color: red;
+        font-size: 36px;
+      }
+    </style>
+    <!-- 자동으로 마진을 줌 마진 오토   근데 가끔 글속성(박스속성이 아닌)의 경우는 안옮겨짐 이럴경우는 디스플레이 블록을 씌워줘야함-->
+    <!-- 마진 방향: 위 오른쪽 아래 왼쪽 -->
+    <!--클래스에 원하는 스타일 클래스 만들어서 명찰을 하나 더 달아줄 수 있움-->
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="mytitle">
+        <h1>로그인 페이지</h1>
+        <h5>아이디, 패스워드를 입력해주세요</h5>
+      </div>
+
+      <p>ID: <input type="text" /></p>
+      <p>PW: <input type="text" /></p>
+      <p><button class="mybtn red-font">로그인하기</button></p>
+    </div>
+  </body>
+</html>
