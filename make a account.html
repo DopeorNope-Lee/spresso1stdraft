@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+#btn2 {
+  width: 260px;
+  height: 30px;
+  font-size:12x;
+  font-family: 'Nanum Gothic';
+  color: white;
+  line-height: 0px;
+  text-align: center;
+  background: #6fa8dc;
+  border: solid 2px #6fa8dc;
+  border-radius: 12px;
+  display: inline-block;
+}
+#textbox{
+  width: 250px;
+  height: 25px;
+  font-size: 12px;
+  font-family: 'Nanum Gothic';
+  color: grey;
+  line-height: 50px;
+  text-align: left;
+  background: #eeeeee;
+  border: solid 1px #eeeeee;
+  border-radius: 10px;
+
+}
+
+#logo{
+  font-family: 'Palette Mosaic';
+
+}
+
+#recommend{
+  font-family: 'Nanum Gothic';
+  color: grey;
+  font-weight: bolder;
+  font-size: 20px;
+
+}
+.wrap { 
+position:relative; /*감싸는 레이어에 포지션 속성을 잡아주는 게 필수!(relative, absolute, fixed 중 택1*/ width:450px; 
+height:550px; 
+background:#ffffff; 
+border: solid 3px #eeeeee;
+margin:0 auto;  
+font-size:12px; }
+
+
+
+.line {
+   display:flex;
+   flex-basis:100%;
+   align-items:center;
+   color:rgba(0,0,0,0.35);
+   font-size:14px;
+   margin-left: 73px;
+    margin-right: 73px;
+    top:100px; 
+    right: 100px;
+
+
+}
+.line::before{
+   content:"";
+   flex-grow:1;
+   margin:0px 15px;
+   background:rgba(0,0,0,0.35);
+   height:1px;
+   font-size:0px;
+   line-height: 0px;
+}
+.line::after {
+   content:"";
+   flex-grow:1;
+   margin:0px 15px;
+   background:rgba(0,0,0,0.35);
+   height:1px;
+   font-size:0px;
+   line-height: 0px;
+}
+</style>
+<div class = "wrap">
+<div style="text-align: center;">
+    <h1 id = "logo" >S_presso</h1>
+ <div id = "recommend">친구들과 시간표를 공유하고 추천받으세요!</div>
+ </div>
+ 
+ <div style="text-align: center;">
+<form action="/login.php">
+  <label for="id"></label><br>
+  <input type="text" id="textbox" name="id" placeholder="휴대폰 번호 또는 이메일 주소" onfocus="this.placeholder=''" onblur="this.placeholder='휴대폰 번호 또는 이메일 주소'"><br>
+  <label for="code"></label><br>
+  <input type="text" id="textbox" name="code" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'"><br><br>
+  <input type = "submit" id="btn2" value="로그인">
+</form> <br>
+</div> 
+<div class="line">
+   또는
+    </div>
+
+
+<div style="text-align: center;">
+<form action="/account.php">
+  <label for="address"></label><br>
+  <input type="text" id="textbox" name="address" placeholder="휴대폰 번호 또는 이메일 주소" onfocus="this.placeholder=''" onblur="this.placeholder='휴대폰 번호 또는 이메일 주소'"><br>
+  <label for="name"></label><br>
+  <input type="text" id="textbox" name="name" placeholder="성명" onfocus="this.placeholder=''" onblur="this.placeholder='성명'"><br>
+  <label for="nickname"></label><br>
+  <input type="text" id="textbox" name="nickname" placeholder="닉네임" onfocus="this.placeholder=''" onblur="this.placeholder='닉네임'"><br>
+  <label for="code"></label><br>
+  <input type="text" id="textbox" name="code" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'"><br><br>
+  <input type = "submit" id="btn2" value="가입">
+</form> 
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+    
+
+    </style>
+    <head>
+        <!-- css 파일 -->
+        <link rel="stylesheet" type="text/css" href="./css/login.css">
+
+    </head>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+              <h2 class="active" onclick="SignIn()" id="in"> Sign In </h2>
+              <h2 class="inactive underlineHover" onclick="SignOut()" id="out">Sign Up </h2>
+
+              <script>
+                  // sign In과 sign Out에 따른 화면 변경 및, class 속성 변경
+                  function SignIn() {
+                    document.getElementById('sign_in').style.display = 'block';
+                    document.getElementById('out').className = 'inactive'
+                    document.getElementById('out').className += 'underlineHover'
+
+                    document.getElementById('sign_out').style.display = 'none';
+                    document.getElementById('in').className = 'active'
+                  }
+
+                  function SignOut() {
+                    document.getElementById('sign_in').style.display = 'none';
+                    document.getElementById('out').className = 'active'
+
+                    document.getElementById('sign_out').style.display = 'block'
+                    document.getElementById('in').className = 'inactive'
+                    document.getElementById('in').className += 'underlineHover'
+                  }
+              </script>
+          
+              <!-- 로그인 -->
+              <nav id="sign_in">
+                <div class="fadeIn first">
+                    <img src="./image/login_sec.png" id="icon" alt="User Icon" style="width: 30%; height: auto; padding-top: 10px" />
+                </div>
+            
+                <!-- Login Form -->
+                <form action="./main.html">
+                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+            
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="./forgot_password.html">Forgot Password?</a>
+                </div>
+            </nav>
+            
+            <!-- 회원가입 -->
+            <nav id="sign_out" style="display:none">
+                <div class="fadeIn first">
+                    <img src="./image/add-user.png" id="icon" alt="User Icon" style="width: 15%; height: auto; padding-top: 10px" />
+                </div>
+            
+                <!-- sign up Form -->
+                <form>
+                    <input type="text" id="email" class="fadeIn second" name="login" placeholder="email">
+                    <input type="text" id="login" class="fadeIn third" name="login" placeholder="login">
+                    <input type="text" id="password" class="fadeIn fourth" name="login" placeholder="password">
+                    <input type='submit' class="fifth" value="Sign Up" onclick="alert('회원 가입 완료.')">
+                </form>
+            </nav>
+
+            </div>
+          </div>
+    </body>
+</html>
