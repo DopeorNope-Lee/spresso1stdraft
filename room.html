@@ -55,10 +55,17 @@
 		<script>
 			//자바 스크립트 시작
 			function erase_room() {
-				alert("미팅룸을 삭제하시겠습니까?");
+				var determinder = confirm("미팅룸을 삭제하시겠습니까?");
+				if (determinder == true) {
+				} else {
+				}
 			}
 			function add_user() {
-				alert("사용자를 추가하시겠습니까?");
+				var u_id = prompt("추가할 사용자의 ID를 입력해주세요.");
+				var determinder2 = prompt(u_id, "유저를 추가하겠습니까?");
+				if (determinder2 == true) {
+				} else {
+				}
 			}
 		</script>
 	</head>
