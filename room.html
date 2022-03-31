@@ -62,7 +62,7 @@
 			}
 			function add_user() {
 				var u_id = prompt("추가할 사용자의 ID를 입력해주세요.");
-				var determinder2 = prompt(u_id, "유저를 추가하겠습니까?");
+				var determinder2 = confirm(u_id.toString() + "유저를 추가하겠습니까?"); // 문자열로 변환후 추가함
 				if (determinder2 == true) {
 				} else {
 				}
