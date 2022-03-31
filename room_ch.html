@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			
+		</script>
+
+		<title>Room</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			* {
+				font-family: "Jua", sans-serif;
+			}
+
+			.wrap {
+				width: 900px;
+				margin: auto;
+			}
+
+			.comment {
+				color: blue;
+				font-weight: bold;
+			}
+			.pop_wrap{
+				position:fixed; 
+				top:0; 
+				left:0; 
+				right:0; 
+				bottom:0; 
+				background:rgba(0,0,0,.5); 
+				font-size:0; 
+				text-align:center;
+				z-index: 1;
+			}
+			.pop_wrap:after{
+				display:inline-block; 
+				height:100%; 
+				vertical-align:middle; 
+				content:'';
+			}
+			.pop_wrap .pop_inner{
+				display:inline-block; 
+				padding:20px 30px; 
+				background:#fff; 
+				width:400px; 
+				vertical-align:middle; 
+				font-size:15px;
+			}
+			.btn_open{
+				font-weight:bold; 
+				margin-top:20px; 
+				padding:12px 15px; 
+				font-size:20px;
+				background:rgb(110, 110, 240);
+				color:#fff;
+			}
+		</style>
+		<script>
+			//자바 스크립트 시작
+			function pop() {
+				var target = document.querySelectorAll('.btn_open');
+				var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+				var targetID;
+				for(var i = 0; i < target.length; i++){
+					target[i].addEventListener('click',function(){
+						targetID = this.getAttribute('href');
+						document.querySelector(targetID).style.display = 'block';
+					});
+				}
+
+				for(var j = 0; j < target.length; j++){
+					btnPopClose[j].addEventListener('click',function(){
+						this.parentNode.parentNode.style.display = 'none';
+					});
+				}
+
+				var time = set_time();
+				const p01 = document.getElementById('p-01');
+				const fulltext = "모임 시간은 " + time + "입니다";
+				p01.innerHTML = fulltext;
+			}
+			
+
+			function erase_room() {
+				alert("미팅룸을 삭제하시겠습니까?");
+			}
+			function add_user() {
+				alert("사용자를 추가하시겠습니까?");
+			}
+			function set_time() {
+				var time = "목요일 6시 30분 - 7시 30분";
+				return time;
+				//get_time();
+				//return time;
+			}
+
+			
+		</script>
+	</head>
+
+	<body onload="pop();">
+		<div class="wrap">
+			<div class="jumbotron">
+				<h1 class="display-4">Meeting room</h1>
+				<p class="lead">Room name : 서비스프레소 정기 미팅정하기</p>
+				<p class="roomcode">Code : 3300001</p>
+				<hr class="my-4" />
+				<a
+					href="#pop_info_1"
+					class="btn_open"
+					>사용자 추가</a>
+				<a
+					class="btn_open"
+					href="#pop_info_2"
+					>미팅룸 삭제</a>
+				<div id = "pop_info_1" class = "pop_wrap" style = "display:none;">
+					<div class = "pop_inner">
+						<p class = "dsc">사용자가 추가되었습니다.</p>
+						<button type = "button" class = "btn_close">닫기</button>
+					</div>
+				</div>
+				<div id = "pop_info_2" class = "pop_wrap" style = "display:none;">
+					<div class = "pop_inner">
+						<p class = "dsc">미팅룸이 삭제되었습니다.</p>
+						<button type = "button" class = "btn_close">닫기</button>
+					</div>
+					</div>
+
+			</div>
+			<div class="card-columns">
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User1</a>
+						<p class="card-text">1번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User2</a>
+						<p class="card-text">2번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User3</a>
+						<p class="card-text">3번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User4</a>
+						<p class="card-text">4번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User5</a>
+						<p class="card-text">5번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						class="card-img-top"
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150417_264%2Fninevincent_14291992723052lDb3_JPEG%2Fkakao_11.jpg&type=sc960_832"
+						alt="Card image cap"
+					/>
+					<div class="card-body">
+						<a href="http://naver.com/" class="card-title">User6</a>
+						<p class="card-text">6번째 유저</p>
+						<p class="card-text comment">선호시간 :</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<a
+				margin-left: 100px; 
+				class="btn_open"
+				href="#pop_info_3"
+				>시간 정하기</a>
+			<div id = "pop_info_3" class = "pop_wrap" style = "display:none;">
+				<div class = "pop_inner">
+					<p class = "dsc" id="p-01">...Output variables here...</p>
+					<button type = "button" class = "btn_close">닫기</button>
+				</div>
+			</div>
+
+		</div>
+		</div>
+	</body>
+</html>
