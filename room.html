@@ -52,6 +52,15 @@
 				font-weight: bold;
 			}
 		</style>
+		<script>
+			//자바 스크립트 시작
+			function erase_room() {
+				alert("미팅룸을 삭제하시겠습니까?");
+			}
+			function add_user() {
+				alert("사용자를 추가하시겠습니까?");
+			}
+		</script>
 	</head>
 
 	<body>
@@ -62,10 +71,18 @@
 				<p class="roomcode">Code : 3300001</p>
 				<hr class="my-4" />
 				<p class="lead">
-					<a class="btn btn-primary btn-lg" href="#" role="button"
+					<a
+						class="btn btn-primary btn-lg"
+						href="#"
+						role="button"
+						onclick="add_user()"
 						>사용자 추가</a
 					>
-					<a class="btn btn-primary btn-lg" href="#" role="button"
+					<a
+						class="btn btn-primary btn-lg"
+						onclick="erase_room()"
+						href="#"
+						role="button"
 						>미팅룸 삭제</a
 					>
 				</p>
