@@ -109,8 +109,10 @@
 
 				var time = set_time();
 				const p01 = document.getElementById('p-01');
+                const p02 = document.getElementById('p-02');
 				const fulltext = "모임 시간은 " + time + "입니다";
 				p01.innerHTML = fulltext;
+                p02.innerHTML = time;
 			}
 			
 
@@ -234,21 +236,24 @@
 					</div>
 				</div>
 			</div>
+            <div class="jumbotron">
+                <a
+                    class="btn_open"
+                    href="#pop_info_3"
+                    >시간 정하기</a>
+                <div id = "pop_info_3" class = "pop_wrap" style = "display:none;">
+                    <div class = "pop_inner">
+                        <p class = "dsc" id="p-01">...Output variables here...</p>
+                        <button type = "button" class = "btn_close">닫기</button>
+                    </div>
+                </div>
+                <h3><br/>당신의 모임 시간은...</h3>
+                    <p id = "p-02" style="font-size: 30px;">...aa...</p>
+                </div>
+            </div>
 		</div>
-		<div>
-			<a
-				margin-left: 100px; 
-				class="btn_open"
-				href="#pop_info_3"
-				>시간 정하기</a>
-			<div id = "pop_info_3" class = "pop_wrap" style = "display:none;">
-				<div class = "pop_inner">
-					<p class = "dsc" id="p-01">...Output variables here...</p>
-					<button type = "button" class = "btn_close">닫기</button>
-				</div>
-			</div>
-
-		</div>
+		
+        
 		</div>
 	</body>
 </html>
